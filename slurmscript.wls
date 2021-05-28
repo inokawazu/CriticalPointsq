@@ -1,4 +1,3 @@
-#!/usr/bin/env wolframscript
 (* ::Package:: *)
 
 wp = 2*MachinePrecision;
@@ -7,11 +6,7 @@ lowerGridPoint = 40;
 higherGridPoint = 45;
 kRange = Subdivide[-5,5,250];
 
-If[
-	$ScriptCommandLine==={},
-	SetDirectory@NotebookDirectory[],
-	SetDirectory@DirectoryName@ExpandFileName@First[$ScriptCommandLine]
-];
+SetDirectory@DirectoryName@ExpandFileName["slurmscript.wls"];
 
 dataDir = FileNameJoin[{Directory[],"data"}];
 Get[FileNameJoin[{Directory[],"source","PseudoSpectralUtils.wl"}]]
